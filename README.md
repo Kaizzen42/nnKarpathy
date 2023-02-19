@@ -17,14 +17,23 @@ It will prevent mixups with other python installations. Note that these other ve
 `which python3`
 This should return a path within your env. If it returns a path like your system default, or another env, the python is not the one you want to use. To fix this, first check if python was installed correctly in the location you wanted, and then deactivate and reactivate your env.
 
-Correct value for `which python3`
-`/opt/homebrew/Caskroom/miniforge/base/envs/torch_nn_base/bin/python3`
+    Correct value for `which python3`
 
-Incorrect value:
-`/opt/homebrew/bin/python3`
+    `/opt/homebrew/Caskroom/miniforge/base/envs/torch_nn_base/bin/python3`
+
+    Incorrect value:
+    `/opt/homebrew/bin/python3`
 
 4. [optional] If you see the bug in step3, fix as follows:
 `conda deactivate`
 Repeat if your env moves to `base`, till you reach a state where no envs are active.
 `conda activate torch_nn_base` 
+
+5. Install torch
+Follow instructions here: https://pytorch.org/get-started/locally/
+`conda install pytorch torchvision torchaudio -c pytorch`
+And verify with importing torch in your notebook.
+
+6. Install matplotlib
+`conda install matplotlib`
 
